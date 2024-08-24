@@ -21,7 +21,15 @@ header{
 /* MAIN */
 main{
     background-color: antiquewhite;
-
+    .sectionIndex{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        h1{
+            text-align: center;
+        }
+    }
 }
 
 .mainIndex{
