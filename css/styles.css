@@ -19,7 +19,7 @@ header{
 }
 
 /* MAIN */
-main{
+.mainIndex{
     background-color: antiquewhite;
     .sectionIndex{
         display: flex;
@@ -36,6 +36,32 @@ main{
     height: 100%;
     width: 100%;
 }
+
+    /* RESERVAS MAIN */
+.reservasMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    .sectReservas{
+        background-color: antiquewhite;
+        padding: 15px;
+        border-radius: 15px;
+        border: 1px solid black;
+    }
+
+    .formularioReservas{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+
+
+
+
 
 /* FOOTER */
 footer{
