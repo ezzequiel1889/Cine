@@ -62,3 +62,11 @@ footer{
         }
     }
 }
+
+
+/* MEDIA INDEX */
+@media screen and (min-width: 402px){
+    .somos{
+        text-align: center;
+    }
+}
