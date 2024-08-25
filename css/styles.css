@@ -43,6 +43,7 @@ header{
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+    
     .sectReservas{
         background-color: antiquewhite;
         padding: 15px;
@@ -55,6 +56,12 @@ header{
         flex-direction: column;
         gap: 15px;
         text-align: center;
+        input{
+            border: 1px solid black;
+        }
+        textarea{
+            border: 1px solid black;
+        }
     }
 }
 
