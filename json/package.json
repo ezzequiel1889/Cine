@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch ./javascript"
+    "start": "node --watch ../js/javascript.js"
   },
   "author": "",
   "license": "ISC"

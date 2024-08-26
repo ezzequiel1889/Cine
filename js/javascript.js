@@ -14,13 +14,18 @@
     let mostrarComida = document.getElementById("listaComida");
 
 
-/// DNI ///
-    /* Se agrega el evento de click */
-    ENVIAR.addEventListener("click", function(){
-        event.preventDefault();
-        /* se guarda el valor en una variable, entrando a la propiedad "VALUE" */
-        let dniValor = parseInt(DNI.value); /* input devuelve cadena por eso se parseInt*/
+/* FUNCION */
+function datosUsuario(dniValor, edadValor){
+    alert("tu dni:" + dniValor + "y tu edad:" + edadValor + "cpoinciden perfecto");
+}
 
+
+/// DNI ///
+/* Se agrega el evento de click */
+ENVIAR.addEventListener("click", function(){
+    event.preventDefault();
+    let dniValor = parseInt(DNI.value); /* input devuelve cadena por eso se parseInt*/
+        /* se guarda el valor en una variable, entrando a la propiedad "VALUE" */
         if(dniValor > 0 &&  dniValor <= 99999999){
             alert(`Ingresaste el dni: ${dniValor}`);
         }else {
@@ -31,7 +36,7 @@
     })  
 
 
-/// EDAD ///
+    /// EDAD ///
     ENVIAR.addEventListener("click", function(){
         event.preventDefault();
         let edadValor = parseInt(EDAD.value);
@@ -41,15 +46,17 @@
             alert(`sos menor, no podes ingresar`);
         }
         mostrarEdad.textContent = `${edadValor}`;
-    });
 
+    });
+  
+    
 /// PELICULA ///
     ENVIAR.addEventListener("click", function(){
         event.preventDefault();
         let peliculaElegida = PELICULA.value;
 
         mostrarPelicula.textContent = `${peliculaElegida}`;
-        
+
     });
 
 /// DIMENSION ///
@@ -71,4 +78,6 @@
     });
         
 
+
+datosUsuario(dniValor,edadValor);
 
