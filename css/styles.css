@@ -41,9 +41,8 @@ header{
 .reservasMain{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
-    
     .sectReservas{
         background-color: antiquewhite;
         padding: 15px;
@@ -54,13 +53,25 @@ header{
     .formularioReservas{
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 8px;
         text-align: center;
         input{
             border: 1px solid black;
         }
         textarea{
             border: 1px solid black;
+        }
+    }
+
+    .contInfoReservas{
+        height: 170px;
+        background-color: antiquewhite;
+        padding: 5x;
+        border-radius: 15px;
+        border: 1px solid black;
+        h3{
+            font-size: 20px;
+            text-align: center;
         }
     }
 }
