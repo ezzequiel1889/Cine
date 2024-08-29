@@ -16,7 +16,7 @@
 
 /* FUNCION */
 function datosUsuario(dniValor, edadValor){
-    alert("tu dni:" + dniValor + "y tu edad:" + edadValor + "coinciden perfecto");
+    alert("tu dni: " + dniValor + " y tu edad: " + edadValor + " coinciden perfecto");
 }
 
 
@@ -33,7 +33,7 @@ ENVIAR.addEventListener("click", function(){
                 alert('Volve a ingresar el DNI de nuevo');
 
             }
-            mostrarDni.textContent = `${dniValor}`;
+            mostrarDni.textContent = `DNI: ${dniValor}`;
             localStorage.setItem("DNI", dniValor); // "CLAVE" : valor
         
         /// EDAD ///
@@ -43,7 +43,7 @@ ENVIAR.addEventListener("click", function(){
             }else{
                 alert(`sos menor, no podes ingresar`);
             }
-            mostrarEdad.textContent = `${edadValor}`;
+            mostrarEdad.textContent = `EDAD: ${edadValor}`;
     
             localStorage.setItem("EDAD", edadValor); // "CLAVE" : valor
     
@@ -56,7 +56,7 @@ ENVIAR.addEventListener("click", function(){
                 event.preventDefault();
                 let peliculaElegida = PELICULA.value;
         
-                mostrarPelicula.textContent = `${peliculaElegida}`;
+                mostrarPelicula.textContent = `PELICULA: ${peliculaElegida}`;
                 localStorage.setItem("PELICULA", peliculaElegida); // "CLAVE" : valor
         
         
@@ -64,14 +64,14 @@ ENVIAR.addEventListener("click", function(){
                 let dimensionValor = DIMENSION.value;
         
                 if (dimensionValor == "3D" || dimensionValor == "4D"){
-                    mostrarDimension.textContent = `${dimensionValor}`;
+                    mostrarDimension.textContent = `DIMENSION: ${dimensionValor}`;
                 }
                 localStorage.setItem("DIMENSION", dimensionValor); // "CLAVE" : valor
         
         
         /// COMIDA ///
                 let comidaValor = txtArea.value;
-                mostrarComida.textContent = `${comidaValor}`;
+                mostrarComida.textContent = `COMIDA: ${comidaValor}`;
                 localStorage.setItem("COMIDA", comidaValor); // "CLAVE" : valor
 
 
@@ -93,6 +93,10 @@ ENVIAR.addEventListener("click", function(){
 
                 // Ya pasado a string, se puede ver en consola el obj
                 console.log(infoObj);
+
+                
+                /* funcion de dni y edad */
+                datosUsuario(dniValor,edadValor);
     })  
 
 
