@@ -27,11 +27,10 @@ ENVIAR.addEventListener("click", function(){
         event.preventDefault();
         let dniValor = parseInt(DNI.value); /* input devuelve cadena por eso se parseInt*/
             /* se guarda el valor en una variable, entrando a la propiedad "VALUE" */
-            if(dniValor > 0 &&  dniValor <= 99999999){
+            if(dniValor > 999999 &&  dniValor <= 99999999){
                 alert(`Ingresaste el dni: ${dniValor}`);
             }else {
-                alert('Volve a ingresar el DNI de nuevo');
-
+                alert('Ingrese un DNI valido.');
             }
             mostrarDni.textContent = `DNI: ${dniValor}`;
             localStorage.setItem("DNI", dniValor); // "CLAVE" : valor
