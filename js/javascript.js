@@ -16,7 +16,7 @@
 
 /* FUNCION */
 function datosUsuario(dniValor, edadValor){
-    alert("tu dni:" + dniValor + "y tu edad:" + edadValor + "cpoinciden perfecto");
+    alert("tu dni:" + dniValor + "y tu edad:" + edadValor + "coinciden perfecto");
 }
 
 
@@ -33,6 +33,7 @@ ENVIAR.addEventListener("click", function(){
             
         }
         mostrarDni.textContent = `${dniValor}`;
+        localStorage.setItem("DNI", dniValor); // "CLAVE" : valor
     })  
 
 
@@ -47,6 +48,12 @@ ENVIAR.addEventListener("click", function(){
         }
         mostrarEdad.textContent = `${edadValor}`;
 
+        localStorage.setItem("EDAD", edadValor); // "CLAVE" : valor
+
+
+
+        let edadBorrado = localStorage.removeItem("EDAD", edadValor)
+        console.log(edadBorrado); // se borra la clave : valor
     });
   
     
@@ -56,7 +63,7 @@ ENVIAR.addEventListener("click", function(){
         let peliculaElegida = PELICULA.value;
 
         mostrarPelicula.textContent = `${peliculaElegida}`;
-
+        localStorage.setItem("PELICULA", peliculaElegida); // "CLAVE" : valor
     });
 
 /// DIMENSION ///
@@ -67,7 +74,7 @@ ENVIAR.addEventListener("click", function(){
         if (dimensionValor == "3D" || dimensionValor == "4D"){
             mostrarDimension.textContent = `${dimensionValor}`;
         }
-        
+        localStorage.setItem("DIMENSION", dimensionValor); // "CLAVE" : valor
     });
 
 /// COMIDA ///
@@ -75,9 +82,20 @@ ENVIAR.addEventListener("click", function(){
         event.preventDefault();
         let comidaValor = txtArea.value;
         mostrarComida.textContent = `${comidaValor}`;
+        localStorage.setItem("COMIDA", comidaValor); // "CLAVE" : valor
     });
-        
+    
 
+// /* LOCAL STORAGE GET Y CLEAR ITEM */    
+// let comidaItem = localStorage.getItem("COMIDA");
+// alert(comidaItem); // muestra el valor de la clave
 
-datosUsuario(dniValor,edadValor);
+let infoObj = {
+    "dni" : dniValor,
+    "edad" : edadValor,
+    "pelicula" : peliculaElegida,
+    "dimension" : dimensionValor,
+    "comida" : comidaValor
+}
 
+localStorage.setItem(infoObj);
