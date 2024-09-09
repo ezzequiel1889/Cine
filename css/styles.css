@@ -36,7 +36,9 @@ header{
     height: 100%;
     width: 100%;
 }
-
+.ul-acordeon{
+    width: 100%;
+}
 /* RESERVAS MAIN */
 .reservasMain{
     display: flex;
@@ -114,4 +116,18 @@ footer{
     .somos{
         text-align: center;
     }
+}
+
+@media screen and (min-width: 505px){
+    .bodyIndex{
+        height: 130vh;
+    }
+    .reservasMain{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #submit{
+        margin-top: 90px;
+    }
+
 }

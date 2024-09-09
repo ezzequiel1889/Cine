@@ -27,21 +27,13 @@ ENVIAR.addEventListener("click", function(){
         event.preventDefault();
         let dniValor = parseInt(DNI.value); /* input devuelve cadena por eso se parseInt*/
             /* se guarda el valor en una variable, entrando a la propiedad "VALUE" */
-            if(dniValor > 999999 &&  dniValor <= 99999999){
-                alert(`Ingresaste el dni: ${dniValor}`);
-            }else {
-                alert('Ingrese un DNI valido.');
-            }
+
             mostrarDni.textContent = `DNI: ${dniValor}`;
             localStorage.setItem("DNI", dniValor); // "CLAVE" : valor
         
         /// EDAD ///
             let edadValor = parseInt(EDAD.value);
-            if(edadValor >= 18){
-                alert(`tenes ${edadValor} sos mayor`);
-            }else{
-                alert(`sos menor, no podes ingresar`);
-            }
+
             mostrarEdad.textContent = `EDAD: ${edadValor}`;
     
             localStorage.setItem("EDAD", edadValor); // "CLAVE" : valor
@@ -49,8 +41,7 @@ ENVIAR.addEventListener("click", function(){
             let edadBorrado = localStorage.removeItem("EDAD", edadValor)
             console.log(edadBorrado); // se borra la clave : valor
         
-          
-            
+
         /// PELICULA ///
             let peliculaElegida = PELICULA.value;
     
@@ -61,9 +52,14 @@ ENVIAR.addEventListener("click", function(){
         /// DIMENSION ///
             let dimensionValor = DIMENSION.value;
     
-            if (dimensionValor == "3D" || dimensionValor == "4D"){
+            // validar que dimensionValor no sea de importancia la mayuscula y que a su vez ingrese si o si alguna de las 2 opciones
+            if (dimensionValor != "3d" && dimensionValor != "3D" && dimensionValor != "4d" && dimensionValor != "4D") {
+                mostrarDimension.textContent = `DIMENSION: INCORRECTA`;
+                alert('Tenes que elegir 3d o 4d, Cualquier otro valor se tomara como incorrecto')
+            }else{
                 mostrarDimension.textContent = `DIMENSION: ${dimensionValor}`;
             }
+
             localStorage.setItem("DIMENSION", dimensionValor); // "CLAVE" : valor
         
         
@@ -97,3 +93,27 @@ ENVIAR.addEventListener("click", function(){
 // /* LOCAL STORAGE GET Y CLEAR ITEM */    
 // let comidaItem = localStorage.getItem("COMIDA");
 // alert(comidaItem); // muestra el valor de la clave
+
+
+/* Asincronismo y Peticiones */
+    // setTimeout(() => {
+    //     console.log('Esto se ejecuta cada 3 segundos.');
+    // },3000);
+
+    // setInterval(() => {
+    //     console.log('Esto se ejecuta cada 4 segundos');
+    // },4);
+
+    /* FUNCION ASYNC, TIPICA FUNCION PARA OBTENER DATOS Y RETORNAR EL JSON */
+    // async function fetchData(){ //fetchData es el nombre de la funcion
+    //     const url = 'https://raw.githubusercontent.com/yoelysfigueredopadron/JSON/main/productos-cosmocurio.json';
+    // 
+    //     try{
+    //         const response = await fetch(url); //se obtienen los datos en un await fetch 
+    //         const data = await response.json();// se pasan a JSON esos datos
+    // 
+    //         return data; //el try retorna el JSON
+    //     }catch(ERROR){
+    //         return 'Error...';
+    //     }
+    // }
