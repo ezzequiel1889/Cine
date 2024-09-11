@@ -96,6 +96,7 @@ ENVIAR.addEventListener("click", function(){
 
 
 /* Asincronismo y Peticiones */
+    // ASINCRONICO TIENE QUE TENER SI O SI UN ASYNC Y UN AWAIT
     // setTimeout(() => {
     //     console.log('Esto se ejecuta cada 3 segundos.');
     // },3000);
@@ -109,11 +110,18 @@ ENVIAR.addEventListener("click", function(){
     //     const url = 'https://raw.githubusercontent.com/yoelysfigueredopadron/JSON/main/productos-cosmocurio.json';
     // 
     //     try{
-    //         const response = await fetch(url); //se obtienen los datos en un await fetch 
+    //         const response = await fetch(url); 
+                    /*el fetch() obtiene los datos de ese link,
+                    y se usa await en vez de .then lo que hace
+                    es que espera a que el codigo se resuelva
+                    o rechace antes de continuar con el proceso */
+
     //         const data = await response.json();// se pasan a JSON esos datos
-    // 
+    //          
     //         return data; //el try retorna el JSON
     //     }catch(ERROR){
     //         return 'Error...';
     //     }
     // }
+            /*throw new Error() se usa en el try para lanzar manualmente un error
+            sin tener que pasar por el catch(ERROR)*/
