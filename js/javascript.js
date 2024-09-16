@@ -104,11 +104,19 @@ ENVIAR.addEventListener("click", function(){
             datosUsuario(dniValor,edadValor);
     })  
 
-// ASICRONISMO Y PETICIONES    
 
-
-/* Asincronismo y peticiones */
 /* Fetch */
+// Hace una solicitud HTTP a la URL especificada y devuelve una promesa
+fetch('https://raw.githubusercontent.com/yoelysfigueredopadron/JSON/main/productos-cosmocurio.json')
+
+//Este primer then() maneja la respuesta de la solicitud. 
+    //normalmente verificamos si la respuesta fue exitosa o fallida
+    //Utilizamos métodos como .json() para transformar la respuesta en un formato utilizable
+.then(response => response.json()) // obtener los datos directamente de la respuesta
+
+    //(los datos en formato JSON) se pasa como argumento a esta segunda función then()
+    //donde se puede trabajar con los datos. Como por ej el table
+.then(data => console.table(data)) // toma los valores del anterior then y los muestra en table
 /* API rest y peticiones */
 /* Ejemplos de peticiones y asincronismo */
 
