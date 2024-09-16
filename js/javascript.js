@@ -34,8 +34,20 @@ ENVIAR.addEventListener("click", function(){
         /// EDAD ///
             let edadValor = parseInt(EDAD.value);
 
+            //verificar mayor no mayor
+                try{
+                    if(edadValor>=18){
+                        console.log('Edad valida');
+                    }else{
+                        throw new Error('sos menor de edad');
+                    }
+                }catch(err){
+                    console.log('', err); // err toma el valor del throw new Error
+                }finally{
+                    console.log('Resultado de edad: ', edadValor);
+                }
+
             mostrarEdad.textContent = `EDAD: ${edadValor}`;
-    
             localStorage.setItem("EDAD", edadValor); // "CLAVE" : valor
     
             let edadBorrado = localStorage.removeItem("EDAD", edadValor)
@@ -55,6 +67,11 @@ ENVIAR.addEventListener("click", function(){
             // validar que dimensionValor no sea de importancia la mayuscula y que a su vez ingrese si o si alguna de las 2 opciones
             if (dimensionValor != "3d" && dimensionValor != "3D" && dimensionValor != "4d" && dimensionValor != "4D") {
                 mostrarDimension.textContent = `DIMENSION: INCORRECTA`;
+
+                setInterval(() => {
+                    console.log('Dimension no valida.');
+                }, 7000);
+
                 alert('Tenes que elegir 3d o 4d, Cualquier otro valor se tomara como incorrecto')
             }else{
                 mostrarDimension.textContent = `DIMENSION: ${dimensionValor}`;
@@ -87,41 +104,23 @@ ENVIAR.addEventListener("click", function(){
             datosUsuario(dniValor,edadValor);
     })  
 
-
-    
-
-// /* LOCAL STORAGE GET Y CLEAR ITEM */    
-// let comidaItem = localStorage.getItem("COMIDA");
-// alert(comidaItem); // muestra el valor de la clave
+// ASICRONISMO Y PETICIONES    
 
 
-/* Asincronismo y Peticiones */
-    // ASINCRONICO TIENE QUE TENER SI O SI UN ASYNC Y UN AWAIT
-    // setTimeout(() => {
-    //     console.log('Esto se ejecuta cada 3 segundos.');
-    // },3000);
+/* Asincronismo y peticiones */
+/* Fetch */
+/* API rest y peticiones */
+/* Ejemplos de peticiones y asincronismo */
 
-    // setInterval(() => {
-    //     console.log('Esto se ejecuta cada 4 segundos');
-    // },4);
 
-    /* FUNCION ASYNC, TIPICA FUNCION PARA OBTENER DATOS Y RETORNAR EL JSON */
-    // async function fetchData(){ //fetchData es el nombre de la funcion
-    //     const url = 'https://raw.githubusercontent.com/yoelysfigueredopadron/JSON/main/productos-cosmocurio.json';
-    // 
-    //     try{
-    //         const response = await fetch(url); 
-                    /*el fetch() obtiene los datos de ese link,
-                    y se usa await en vez de .then lo que hace
-                    es que espera a que el codigo se resuelva
-                    o rechace antes de continuar con el proceso */
+// PROMESAS Y LIBRERIAS
+/* Promesas */
+/* Fetch y primesas */
+/* Librerias */
+/* Luxon y sweet alert ejemplos */
 
-    //         const data = await response.json();// se pasan a JSON esos datos
-    //          
-    //         return data; //el try retorna el JSON
-    //     }catch(ERROR){
-    //         return 'Error...';
-    //     }
-    // }
-            /*throw new Error() se usa en el try para lanzar manualmente un error
-            sin tener que pasar por el catch(ERROR)*/
+// Proximos pasos
+/* Introduccion a Frameworks */
+/* Iniciar poryectos con NPM */
+/* Paradigmas en programacion */
+/* Analisis frameworks Frontend */
