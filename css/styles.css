@@ -43,7 +43,7 @@ header{
 .reservasMain{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
     .sectReservas{
         background-color: antiquewhite;
@@ -91,7 +91,21 @@ header{
     }
 }
 
+#container{
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
 
+}
+
+.contJsInfo{
+    background-color: rgba(89, 89, 158, 0.829);
+    width: 100%;
+    height: 85%;
+    color: black;
+    border: 3px solid black;
+    border-radius:5px;
+}
 
 
 
